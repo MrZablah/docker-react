@@ -1,0 +1,33 @@
+version: '3'
+
+# For developer use to code with docker
+services:
+  react:
+    build: 
+      # Especify where to get folders to use current
+      context: .
+      # Especify docker file
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    # Add valumes
+    volumes:
+      # Do not map node_modules
+      - /app/node_modules
+      # Map app to root folders
+      - .:/app
+  # Test Service for app
+  test:
+    build: 
+      # Especify where to get folders to use current
+      context: .
+      # Especify docker file
+      dockerfile: Dockerfile.dev
+    # Add valumes
+    volumes:
+      # Do not map node_modules
+      - /app/node_modules
+      # Map app to root folders
+      - .:/app
+    # Run test
+    command: ["npm", "run", "test"]
