@@ -11,8 +11,8 @@ class App extends Component {
 					<p>
 						Edit <code>src/App.js</code> and save to reload.
 					</p>
-					<a className="App-link">
-						Change on feature branch
+					<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+						This was change one more time!
 					</a>
 				</header>
 			</div>
